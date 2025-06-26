@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -247,6 +249,93 @@
 .submitB:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .firstSection {
+    flex-direction: column;
+    margin: 40px 10px;
+    gap: 30px;
+  }
+
+  .firstSection > div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .leftSection {
+    font-size: 2rem;
+  }
+
+  .propic {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about {
+    flex-direction: column;
+    margin: 40px 10px;
+    gap: 30px;
+  }
+
+  .about-content h2 {
+    text-align: center;
+  }
+
+  .services-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .portfolio-container {
+    flex-direction: column;
+  }
+
+  .contact form .input-box {
+    flex-direction: column;
+  }
+
+  .contact form .input-box input {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .about-content h3,
+  .services-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-content p,
+  .contact form input,
+  .contact textarea {
+    font-size: 1.2rem;
+  }
+
+  .Cv {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
 }
 
 
