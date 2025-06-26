@@ -175,7 +175,10 @@
                 
 
             </form> -->
-<form action="https://formspree.io/f/xjkrplwn" method="POST">
+
+
+            
+<!-- <form action="https://formspree.io/f/xjkrplwn" method="POST">
         <div class="input-box">
          <input type="text" name="Full Name" placeholder="Full Name" required>
          <input type="email" name="Email" placeholder="Email Address" required>
@@ -186,7 +189,45 @@
           </div>
       <textarea name="Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
       <input class="submitB" type="submit" value="Send Message">
+</form> -->
+
+ <form id="contact-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
 </form>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+
+  const res = await fetch("https://portfolio-backend-liard-three.vercel.app/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  });
+
+  const data = await res.json();
+
+  if (res.ok) {
+    alert("✅ " + data.message);
+    form.reset();
+  } else {
+    alert("❌ Error: " + (data.error || "Something went wrong"));
+  }
+});
+</script>
+
+
 
 
 
